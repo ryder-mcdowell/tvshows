@@ -1,11 +1,12 @@
 
 run lambda { |env|
   req = Rack::Request.new(env)
-  case req.path_info
-  when /tvshow/
+  path = req.path_info
+  if path == "/tvshow"
     [200, {'Content-Type'=>'text/plain'}, ['That 70s Show']]
-  when /random_tvshow/
-    [200, {'Content-Type'=>'text/plain'}, ['cheese']]
+  elsif path == "/random_tvshow"
+    response = HTTParty.get('http://rocky-scrubland-68340.herokuapp.com/')
+    [200, {'Content-Type'=>'text/plain'}, ['foobar']]
   else
     [200, {'Content-Type'=>'text/plain'}, ['Hello']]
   end
