@@ -5,7 +5,7 @@ run lambda { |env|
   if path == "/tvshow"
     [200, {'Content-Type'=>'text/plain'}, ['That 70s Show']]
   elsif path == "/random_tvshow"
-    response = HTTParty.get('http://rocky-scrubland-68340.herokuapp.com/')
+    response = HTTParty.get('http://rocky-scrubland-68340.herokuapp.com/tvshow')
     puts response.body, response.code, response.message, response.headers.inspect
     [200, {'Content-Type'=>'text/plain'}, ['foobar']]
   else
