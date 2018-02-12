@@ -4,7 +4,7 @@ run lambda { |env|
   request = Rack::Request.new(env)
   if request.path == "/"
     [200, {'Content-Type'=>'text/plain'}, ['Hello']]
-  if request.path == "/tvshow"
+  elsif request.path == "/tvshow"
     [200, {'Content-Type'=>'text/plain'}, ['That 70s Show']]
   elsif request.path == "/random_tvshow"
     hosts = [
