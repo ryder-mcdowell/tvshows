@@ -1,5 +1,3 @@
-include HTTParty
-
 run lambda { |env|
   req = Rack::Request.new(env)
   path = req.path_info
