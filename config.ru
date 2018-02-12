@@ -1,3 +1,4 @@
+include HTTParty
 
 run lambda { |env|
   req = Rack::Request.new(env)
