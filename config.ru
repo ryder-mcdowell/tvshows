@@ -20,7 +20,7 @@ run lambda { |env|
       'tranquil-fjord-57959'
     ]
     hostname = hosts.sample
-    response = HTTParty.get('https://#{hostname}.herokuapp.com/tvshow')
+    response = HTTParty.get("https://#{hostname}.herokuapp.com/tvshow")
     [200, {'Content-Type'=>'text/plain'}, [response.body]]
   else
     [404, {'Content-Type'=>'text/plain'}, ['Not Found']]
